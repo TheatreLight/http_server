@@ -15,11 +15,11 @@ struct input_args {
   char* path;
 };
 
-void print_request(int);
+void set_args(struct input_args*, char**, int);
 int file_read(FILE*, char**);
 void construct_content(char**, char*, int);
-char* get_filename(char* str, char* path);
-int is_html(char* name);
+char* get_filename(char*, char*);
+int is_html(char*);
 
 int set_connection(struct sockaddr_in*);
 void process(struct sockaddr_in*, FILE*, int, char*);

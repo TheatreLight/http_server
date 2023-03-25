@@ -8,5 +8,8 @@ libs:
 build:
 	gcc main.c -o server -L./lib -lserver
 
+debug:
+	gcc main.c server.c -o server -g
+
 clean:
 	rm -rf *.o *.a

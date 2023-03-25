@@ -1,18 +1,5 @@
 #include "server.h"
 
-void set_args(struct input_args* args, char** argv, int argc) {
-  args->port = 9000;
-  args->addr = "0.0.0.0";
-  args->path = "materials/";
-  if (argc > 1) {
-    for (int i = 1; i < argc; ++i) {
-      if (i == 1) args->port = atoi(argv[i]);
-      if (i == 2) args->addr = argv[i];
-      if (i == 3) args->path = argv[i];
-    }
-  }
-}
-
 int main(int argc, char **argv) {
   FILE *f = NULL;
   struct sockaddr_in address;

@@ -8,4 +8,4 @@ To start the server, you can simply do ./server in the current directory and it 
 
   server [PORT] [ADDRESS] [DIRECTORY]
 
-For example, ./server 9000 127.0.0.1 my_dir/my_folder/. Note that the dir parameter must end with "/".
+For example, ./server 9000 127.0.0.1 my_dir/my_folder. Make sure the dir parameter do not end with "/".
