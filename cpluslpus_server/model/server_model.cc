@@ -28,6 +28,7 @@ std::string ServerModel::Process() {
   while(true) {
     std::string request = ReceiveRequest();
     std::string pth = ConstrustFullPath(request);
+    if(pth == path_ + "/") pth += "index.html";
     if (IsHtml(pth)) {
       SendResponse(pth);
     }
