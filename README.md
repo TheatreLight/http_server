@@ -1,6 +1,6 @@
 # http_server
 
-An example of a simple http_server written in both C and C++
+An example of a simple http_server written in both C and C++, Linux-version.
 
 To build the server, you need to go to the appropriate directory and type "make build" - the program will be built with a precompiled library (look in the lib/ directory). If you decide to recompile the library, just type "make libs".
 
