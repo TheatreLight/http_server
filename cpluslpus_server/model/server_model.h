@@ -16,7 +16,7 @@ class ServerModel {
     ServerModel(ServerModel&& other) = default;
     ~ServerModel();
     void SetConnection();
-    std::string Process();
+    void Process();
   private:
     struct sockaddr_in address_;
     size_t address_length_;

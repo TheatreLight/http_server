@@ -8,7 +8,6 @@ int main(int argc, char** argv) {
   std::string path = handler.get_path();
   ServerModel model(port, address, path);
   ServerController controller(&model);
-  auto request = controller.GetProcess();
-  std::cout << request << std::endl;
+  controller.GetProcess();
   return 0;
 }

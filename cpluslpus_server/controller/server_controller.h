@@ -9,7 +9,7 @@ class ServerController {
     ServerController(const ServerController& other) = delete;
     ServerController(ServerController&& other) = delete;
     ~ServerController();
-    std::string GetProcess();
+    void GetProcess();
   private:
     ServerModel *server_;
 };

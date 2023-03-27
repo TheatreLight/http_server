@@ -24,14 +24,13 @@ void ServerModel::SetConnection() {
   }
 }
 
-std::string ServerModel::Process() {
+void ServerModel::Process() {
   while(true) {
     std::string request = ReceiveRequest();
+    std::cout << request << std::endl;
     std::string pth = ConstrustFullPath(request);
     if(pth == path_ + "/") pth += "index.html";
-    if (IsHtml(pth)) {
-      SendResponse(pth);
-    }
+    SendResponse(pth);
   }
 }
 
@@ -63,10 +62,14 @@ bool ServerModel::IsHtml(const std::string& path) {
 }
 
 std::string ServerModel::PageBuild(std::string path_to_dir) {
+  if (!IsHtml(path_to_dir))
+    return "HTTP/1.1 400 Bad Request\nContent-Type: text/html\nContent-Length: 23\n\nWorking with html only!";
   std::ifstream i_file;
   i_file.open(path_to_dir, std::ios::in);
   std::string i_line;
   std::string content;
+  if (!i_file.is_open())
+    return "HTTP/1.1 400 Bad Request\nContent-Type: text/html\nContent-Length: 18\n\nPage doesn't exist";
   while(getline(i_file, i_line)) {
     content += i_line;
   }

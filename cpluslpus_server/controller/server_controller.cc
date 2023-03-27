@@ -7,7 +7,7 @@ ServerController::~ServerController() {
   server_ = nullptr;
 }
 
-std::string ServerController::GetProcess() {
+void ServerController::GetProcess() {
   server_->SetConnection();
-  return server_->Process();
+  server_->Process();
 }
