@@ -3,7 +3,7 @@
 void set_args(struct input_args* args, char** argv, int argc) {
   args->port = 9000;
   args->addr = "0.0.0.0";
-  args->path = "materials";
+  args->path = "../materials";
   if (argc > 1) {
     for (int i = 1; i < argc; ++i) {
       if (i == 1) args->port = atoi(argv[i]);
@@ -12,7 +12,6 @@ void set_args(struct input_args* args, char** argv, int argc) {
     }
   }
 }
-
 
 char* get_filename(char* str, char* path) {
   char* tok = strtok(str, " ");
